@@ -1,0 +1,4 @@
+.gitignore
+server/node_modules
+server/DATABASE.sql
+server/package-lock.json
