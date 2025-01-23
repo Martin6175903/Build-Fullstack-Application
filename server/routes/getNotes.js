@@ -1,7 +1,9 @@
+import pool from "../db.js";
+
 export async function getNotes(req, res) {
   try {
-    console.log(req.body);
-    res.send(`<h1>You response from port 5432</h1>`)
+    const { rows } = await pool.query(`select * from users`);
+    res.json(rows);
   } catch (err) {
     console.error(err.message);
   }
