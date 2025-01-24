@@ -14,10 +14,10 @@ app.use(express.json());
 // ROUTES: getNotes, createNote, deleteNote
 app.get('/', getNotes);
 
-app.get('/notes', getNotes)
-app.post('/notes', createNote);
+app.get('/emails', getNotes)
+app.post('/emails', createNote);
 
-app.delete('/notes/del:id', deleteNote);
+app.delete('/emails/del:id', deleteNote);
 
 app.listen(PORT, () => {
   console.log(`Server has started on port ${PORT}`);
