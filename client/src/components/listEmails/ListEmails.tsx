@@ -8,12 +8,12 @@ const ListEmails = () => {
   const [emails, setEmails] = useState<IEmail[]>([]);
 
   useEffect(() => {
-    getEmails().then(response => setEmails(response))
+    getEmails().then(response => setEmails(response.sort((a:IEmail, b:IEmail) => a.user_id - b.user_id)))
   }, []);
 
   return (
       <div>
-        <h2 className={'text-4xl text-center mb-4'}>Your Emails</h2>
+        <h2 className={'text-4xl text-center mb-4 font-bold'}>Your Emails</h2>
         <div className={'flex flex-col gap-5'}>
           {emails.length ?
               emails.map((email, id) =>
