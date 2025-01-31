@@ -1,15 +1,7 @@
-import {useEffect, useState} from "react";
-import {getEmails} from "../../api/api.ts";
-import {IEmail} from "../../types/email.types.ts";
+import { IListEmailsProps } from "../../types/email.types.ts";
 import ListEmail from "./ListEmail.tsx";
 
-const ListEmails = () => {
-
-  const [emails, setEmails] = useState<IEmail[]>([]);
-
-  useEffect(() => {
-    getEmails().then(response => setEmails(response.sort((a:IEmail, b:IEmail) => a.user_id - b.user_id)))
-  }, []);
+const ListEmails = ({ emails, setEmails }: IListEmailsProps) => {
 
   return (
       <div>

@@ -3,7 +3,7 @@ import {Dispatch, SetStateAction} from "react";
 export interface IEmail {
   user_date: string
   user_id: number
-  user_media?: string
+  user_media?: string | null
   user_message: string
   user_name: string
 }
@@ -23,4 +23,11 @@ export interface IUpdateEmail {
 
 export interface IDeleteEmail {
   user_id: number;
+}
+
+export interface ICreateEmail extends IEmail{}
+
+export interface IListEmailsProps {
+  emails: IEmail[]
+  setEmails: Dispatch<SetStateAction<IEmail[]>>
 }

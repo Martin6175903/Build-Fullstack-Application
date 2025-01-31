@@ -1,20 +1,5 @@
 @import "tailwindcss";
 
-@layer base {
-  label {
-    @apply mb-3 inline-block;
-  }
-  input, textarea {
-    @apply block w-full px-4 focus-visible:outline-0 rounded-lg border-2 border-gray-500 border-solid duration-300 focus:border-gray-300;
-  }
-  textarea {
-    @apply resize-none;
-  }
-  button {
-    @apply rounded-lg bg-zinc-600 py-2 px-4 cursor-pointer duration-300 hover:bg-zinc-500;
-  }
-}
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,4 +13,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  label {
+    @apply mb-3 inline-block;
+  }
+  input, textarea {
+    @apply block w-full px-4 focus-visible:outline-0 rounded-lg border-2 border-gray-500 border-solid duration-300 focus:border-gray-300;
+  }
+  textarea {
+    @apply resize-none;
+  }
+  button {
+    @apply rounded-lg bg-zinc-600 py-2 px-4 cursor-pointer duration-300 hover:bg-zinc-500;
+  }
 }

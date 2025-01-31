@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {IDeleteEmail, IUpdateEmail} from "../types/email.types.ts";
+import {ICreateEmail, IDeleteEmail, IUpdateEmail} from "../types/email.types.ts";
 
 export const getEmails = async function() {
   const {data} = await axios.get('http://localhost:5000/emails');
@@ -12,4 +12,8 @@ export const updateEmail = async function ({user_id, editValue}: IUpdateEmail) {
 
 export const deleteEmail = async function ({user_id}: IDeleteEmail) {
   await axios.delete(`http://localhost:5000/emails/delete/${user_id}`);
+}
+
+export const createEmail = async function (email: ICreateEmail) {
+  await axios.post(`http://localhost:5000/emails/`, email);
 }

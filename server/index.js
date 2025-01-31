@@ -15,7 +15,7 @@ app.use(express.json());
 // ROUTES: getNotes, createNote, deleteNote
 app.get('/', getNotes);
 
-app.get('/emails', getNotes)
+app.get('/emails', getNotes);
 app.post('/emails', createNote);
 
 app.put('/emails/update/:id', updateNote);
